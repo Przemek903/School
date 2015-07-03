@@ -1,0 +1,44 @@
+<%= form_for(@course) do |f| %>
+		
+		<div class="form-group">
+			<%= f.label :name, "Nazwa kursu" %> <br>
+			<%= f.text_field :name, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :description, "Opis kursu" %> <br>
+			<%= f.text_field :description, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :syllabus, "Syllabus" %> <br>
+			<%= f.text_field :syllabus, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :categories, "Kategorie" %> <br>
+			<%= f.text_field :categories, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :recommendedBackground, "Zalecana wiedza" %> <br>
+			<%= f.text_field :recommendedBackground, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :language, "Język" %> <br>
+			<%= f.text_field :language, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :timeOfStudy, "Czas kursu" %> <br>
+			<%= f.text_field :timeOfStudy, :class => "form-control" %>
+		</div>
+
+		<%= f.hidden_field :user_id, :value => current_user.id %>
+
+		<div class="actions">
+    		<%= f.submit "Zatwierdź", :class => "btn btn-primary" %>
+  		</div>
+
+	<% end %>

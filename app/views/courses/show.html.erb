@@ -1,0 +1,50 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-3">
+			<h2><%= image_tag("test.jpg", size: "300x200", class: "img-circle") %></h2>
+		</div>
+		<div class="col-md-5">
+			<h1><strong><%= @course.name %></strong></h1>	
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-7">
+		<h3>O kursie:</h3>
+		<p><%= @course.description %></p>
+		<h3>Syllabus kursu:</h3>
+		<p><%= @course.syllabus %></p>
+		</div>
+		<div class="col-md-4">
+			<%= link_to "Dołącz do kursu", "#", class: "btn btn-info" %>
+			<h5>Sugerowana wiedza:</h5>
+			<p><%= @course.recommendedBackground %></p>
+			<h5>Język:</h5>
+			<p><%= @course.language %></p>
+			<h5>Szacowany czas kursu:</h5>
+			<p><%= @course.timeOfStudy %></p>
+			<h5>Status kursu: 
+				<% if @course.active == true %>
+					Dostępny
+				<% else %>
+					Niedostępny
+				<% end %>
+			</h5>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-7">
+			<h3>Lekcje:</h3>
+			<p>1. Dodawanie</p>
+			<p>1. Dodawanie</p>
+			<p>1. Dodawanie</p>
+			<p>1. Dodawanie</p>
+		</div>
+		<div class="col-md-3"></div>
+		<div class="col-md-1"></div>
+	</div>
+</div>

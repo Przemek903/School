@@ -1,0 +1,45 @@
+<div class="container-fluid userInfo">
+  <div class="row">
+  	<div class="col-md-1"></div>
+  	<div class="col-md-4">
+  		<h1>Nauczyciel <%= current_user.name %></h1>
+  	</div>
+	<div class="col-md-7"></div>  
+  </div>
+  <div class="row">
+  	<div class="col-md-1"></div>
+  	<div class="col-md-4"><%= link_to "Dodaj nowy kurs", new_course_path , :class => "btn btn-info" %></div>
+  </div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10 coursePresents">
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active">
+					<a href="#actual" aria-controls="actual" role="tab" data-toggle="tab">Twoje obecne kursy</a>
+				</li>
+				<li role="presentation">
+					<a href="#ended" aria-controls="ended" role="tab" data-toggle="tab">Twoje zakończone kursy</a>
+				</li>
+			</ul>			  
+			<div class="tab-content">
+			  <div role="tabpanel" class="tab-pane fade in active" id="actual">Programowanie w chmurze</div>
+			  <div role="tabpanel" class="tab-pane fade" id="ended">Programowanie bez chmury</div>
+			</div>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+</div>
+<div class="container-fluid ">
+  <div class="row">
+  	<div class="col-md-1"></div>
+  	<div class="col-md-4">
+  		<h3 class = "actualNews" >Najnowsze informacje:</h3>
+  		<div class="row">
+  			<div class="col-md-12">Jesteś najlepszy</div>
+  		</div>
+  	</div>
+	<div class="col-md-7"></div>  
+  </div>
+</div>

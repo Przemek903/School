@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  photo: MyString
+  syllabus: MyString
+  categories: MyString
+  recommendedBackground: MyString
+  language: MyString
+  timeOfStudy: MyString
+  finalGrade: 1
+
+two:
+  name: MyString
+  description: MyString
+  photo: MyString
+  syllabus: MyString
+  categories: MyString
+  recommendedBackground: MyString
+  language: MyString
+  timeOfStudy: MyString
+  finalGrade: 1

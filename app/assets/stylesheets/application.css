@@ -4,6 +4,8 @@
    *= require_tree .
    */
 
+/*------ header --------*/
+
 .dropMenu {
 	padding: 10px;
 }
@@ -13,4 +15,20 @@
 	color: #000;
 	text-decoration: none;
 	margin: 5px;
+}
+
+
+/*-------- home Page --------*/
+
+.userInfo, .coursePresents{
+	padding-bottom: 30px;
+}
+
+.coursePresents a {
+	font-size: 20px;
+}
+
+.actualNews {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
 }
