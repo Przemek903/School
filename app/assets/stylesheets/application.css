@@ -1,0 +1,16 @@
+  /*
+   *= require bootstrap/dist/css/bootstrap
+   *= require_self
+   *= require_tree .
+   */
+
+.dropMenu {
+	padding: 10px;
+}
+
+.dropMenu a {
+	text-align: center;
+	color: #000;
+	text-decoration: none;
+	margin: 5px;
+}

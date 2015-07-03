@@ -1,0 +1,41 @@
+<!-- Nawigacja -->
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Schooła</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+      	<% if user_signed_in?  %>
+			<li><%= link_to "Wyloguj się", destroy_user_session_path, method: :delete %></li>
+		<% end %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opcje <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+            	<div class="glyphicon glyphicon-user dropMenu" aria-hidden="true"> <%= link_to "Profil", "#" %></div> 
+            </li>
+            <li>
+            	<div class="glyphicon glyphicon-wrench dropMenu" aria-hidden="true"> <%= link_to "Ustawienia", "#" %> </div>
+            </li>
+            <li>
+            	<div class="glyphicon glyphicon-education dropMenu" aria-hidden="true"> <%= link_to "Kontakt", "#" %> </div>
+            </li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Zawartość główna -->
+
+
+<!-- Stopka -->
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+	
+  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+</nav>

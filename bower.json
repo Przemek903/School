@@ -1,0 +1,22 @@
+{
+  "name": "School",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap":"~3.3.0"
+    },
+  "authors": [
+    "przemek903 <przemek903@gazeta.pl>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}
