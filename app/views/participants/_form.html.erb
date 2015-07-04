@@ -1,0 +1,15 @@
+<%= form_for(@participant) do |f| %>
+		
+		<div class="form-group">
+			<%= f.label :grade, "Ocena końcowa" %> <br>
+			<%= f.text_field :grade, :class => "form-control" %>
+		</div>
+
+		<%= f.hidden_field :user_id, :value => params[:user_id] %>
+		<%= f.hidden_field :course_id, :value => params[:course_id] %>
+
+		<div class="actions">
+    		<%= f.submit "Zatwierdź", :class => "btn btn-primary" %>
+  		</div>
+
+	<% end %>

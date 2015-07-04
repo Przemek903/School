@@ -24,8 +24,42 @@
 				</li>
 			</ul>			  
 			<div class="tab-content">
-			  <div role="tabpanel" class="tab-pane fade in active" id="actual">Programowanie w chmurze</div>
-			  <div role="tabpanel" class="tab-pane fade" id="ended">Programowanie bez chmury</div>
+			  <div role="tabpanel" class="tab-pane fade in active" id="actual">
+			  	<% current_user.courses.each do |c| %>
+			  		<% if c.active == true %>
+						<div class="row teacherCoursesList">
+							<div class="col-md-10">
+									<div class="col-md-3"><%= image_tag("test.jpg", size: "150x100") %></div>
+									<div class="col-md-7">
+										<p><%= c.name%></p>
+										<p><%= c.description[0...100] %> ...</p>
+										<p><i> <%= c.user.name %> <%= c.user.surname %></i></p>
+									</div>
+									<div class="col-md-1"><%= link_to "Sprawdź kurs", course_path(c.id), class: "btn btn-info" %></div>
+							</div>
+							<div class="col-md-1"></div>
+						</div>
+					<% end %>
+				<% end %>
+			  </div>
+			  <div role="tabpanel" class="tab-pane fade" id="ended">
+			  	<% current_user.courses.each do |c| %>
+			  		<% if c.active != true %>
+						<div class="row teacherCoursesList">
+							<div class="col-md-10">
+									<div class="col-md-3"><%= image_tag("test.jpg", size: "150x100") %></div>
+									<div class="col-md-7">
+										<p><%= c.name%></p>
+										<p><%= c.description[0...100] %> ...</p>
+										<p><i> <%= c.user.name %> <%= c.user.surname %></i></p>
+									</div>
+									<div class="col-md-1"><%= link_to "Sprawdź kurs", course_path(c.id), class: "btn btn-info" %></div>
+							</div>
+							<div class="col-md-1"></div>
+						</div>
+					<% end %>
+				<% end %>
+			  </div>
 			</div>
 		</div>
 		<div class="col-md-1"></div>

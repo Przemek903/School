@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  resources :courses
-
+  resources :courses do
+  	resources :participants, except: [:show, :index]
+  end
+  
 	devise_for :users, controllers: {
     	registrations: 'user/registrations'
   	}

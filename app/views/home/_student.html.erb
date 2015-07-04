@@ -6,7 +6,9 @@
   		<h4>Ranking: <%= current_user.rank %></h4>
   		<h4>Punkty: <%= current_user.rankPoints %></h4>
   	</div>
-	<div class="col-md-7"></div>  
+	<div class="col-md-7">
+		<%= link_to "Zacznij naukę", courses_path, class: "btn btn-info" %>
+	</div>  
   </div>
 </div>
 <div class="container-fluid">
@@ -22,8 +24,46 @@
 				</li>
 			</ul>			  
 			<div class="tab-content">
-			  <div role="tabpanel" class="tab-pane fade in active" id="actual">Programowanie w chmurze</div>
-			  <div role="tabpanel" class="tab-pane fade" id="ended">Programowanie bez chmury</div>
+			  <div class="tab-content">
+			  <div role="tabpanel" class="tab-pane fade in active" id="actual">
+			  	<% Participant.where( user_id: current_user.id).each do |c| %>
+			  		<% if c.status == true %>
+						<div class="row teacherCoursesList">
+							<div class="col-md-10">
+									<div class="col-md-3"><%= image_tag("test.jpg", size: "150x100") %></div>
+									<div class="col-md-7">
+										<% course = Course.find(c.course_id) %>
+										<p> <%= course.name %> </p>
+										<p> <%= course.description[0...100] %> ...</p>
+										<p><i> <%= course.user.name %> <%= course.user.surname %></i></p>
+									</div>
+									<div class="col-md-1"><%= link_to "Sprawdź kurs", course_path(c.id), class: "btn btn-info" %></div>
+							</div>
+							<div class="col-md-1"></div>
+						</div>
+					<% end %>
+				<% end %>
+			  </div>
+			  <div role="tabpanel" class="tab-pane fade" id="ended">
+			  	<% Participant.where( user_id: current_user.id).each do |c| %>
+			  		<% if c.status == false %>
+						<div class="row teacherCoursesList">
+							<div class="col-md-10">
+									<div class="col-md-3"><%= image_tag("test.jpg", size: "150x100") %></div>
+									<div class="col-md-7">
+										<% course = Course.find(c.course_id) %>
+										<p> <%= course.name %> </p>
+										<p> <%= course.description[0...100] %> ...</p>
+										<p><i> <%= course.user.name %> <%= course.user.surname %></i></p>
+									</div>
+									<div class="col-md-1"><%= link_to "Sprawdź kurs", course_path(c.id), class: "btn btn-info" %></div>
+							</div>
+							<div class="col-md-1"></div>
+						</div>
+					<% end %>
+				<% end %>
+			  </div>
+			  
 			</div>
 		</div>
 		<div class="col-md-1"></div>

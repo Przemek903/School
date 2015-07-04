@@ -18,7 +18,9 @@
 		<p><%= @course.syllabus %></p>
 		</div>
 		<div class="col-md-4">
-			<%= link_to "Dołącz do kursu", "#", class: "btn btn-info" %>
+			<% if (current_user.isStudent == true and @course.participants.where(:user_id => current_user.id).blank? != false )%>
+				<%= link_to "Dołącz do kursu", new_course_participant_path(@course.id), class: "btn btn-info" %>
+			<% end %>
 			<h5>Sugerowana wiedza:</h5>
 			<p><%= @course.recommendedBackground %></p>
 			<h5>Język:</h5>
