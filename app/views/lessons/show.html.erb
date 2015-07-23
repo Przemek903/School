@@ -8,10 +8,12 @@
 			<% if (current_user.isStudent == true and @course.participants.where(:user_id => current_user.id).blank? == false )%>
 				<%= link_to "Rozwiąż test", '#', :class => "btn btn-primary" %>
 			<% elsif current_user.isTeacher and @course.user_id == current_user.id %>
-				<%= link_to "Dodaj test do lekcji", '#', :class => "btn btn-primary" %>
-				<%= link_to "Edytuj pytania w teście", '#', :class => "btn btn-primary" %>
+				<% if @lesson.test.nil?  %>
+					<%= link_to "Dodaj test do lekcji", course_lesson_create_test_path(:lesson_id => @lesson.id), :class => "btn btn-primary" %>
+				<% elsif %>
+					<%= link_to "Dodaj pytania do testu", '#', :class => "btn btn-primary" %>
+				<% end %>
 			<% end %>
-
 		</div>
 		<div class="col-md-3">
 			<%= link_to "Powrót do kursu", course_path(params[:course_id]), :class => "btn btn-primary" %>
