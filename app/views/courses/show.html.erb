@@ -41,10 +41,13 @@
 		<div class="col-md-1"></div>
 		<div class="col-md-7">
 			<h3>Lekcje:</h3>
-			<p>1. Dodawanie</p>
-			<p>1. Dodawanie</p>
-			<p>1. Dodawanie</p>
-			<p>1. Dodawanie</p>
+			<% if current_user.isTeacher %>
+				<%= link_to "Dodaj nową lekcję", new_course_lesson_path(@course.id), class: "btn btn-info" %>
+			<% end %>
+			<% num = 1 %>
+			<% @course.lessons.each do |les| %>
+				<p> <%= num %>. <%= link_to "#{les.name}", course_lesson_path(@course.id, les.id)  %></p> 
+			<% end  %>
 		</div>
 		<div class="col-md-3"></div>
 		<div class="col-md-1"></div>

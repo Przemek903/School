@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-6">
+			<h2><%= @lesson.name %></h2>
+			<h4>Treść lekcji:</h4>
+			<p><%= @lesson.mainKnowledge %></p>
+			<% if (current_user.isStudent == true and @course.participants.where(:user_id => current_user.id).blank? == false )%>
+				<%= link_to "Rozwiąż test", '#', :class => "btn btn-primary" %>
+			<% elsif current_user.isTeacher and @course.user_id == current_user.id %>
+				<%= link_to "Dodaj test do lekcji", '#', :class => "btn btn-primary" %>
+				<%= link_to "Edytuj pytania w teście", '#', :class => "btn btn-primary" %>
+			<% end %>
+
+		</div>
+		<div class="col-md-3">
+			<%= link_to "Powrót do kursu", course_path(params[:course_id]), :class => "btn btn-primary" %>
+			<% if current_user.isTeacher and @course.user_id == current_user.id %>
+				<%= link_to "Usuń lekcję", course_lesson_path, :method => :delete, :class => "btn btn-danger" %>
+				<%= link_to "Edytuj lekcję", edit_course_lesson_path , :class => "btn btn-primary" %>
+			<% end %>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+</div>

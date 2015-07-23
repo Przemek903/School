@@ -1,0 +1,29 @@
+<%= form_for ([@course, @lesson]) do |f| %>
+		
+		<div class="form-group">
+			<%= f.label :name, "Nazwa lekcji" %> <br>
+			<%= f.text_field :name, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :description, "Krótki opis lecji" %> <br>
+			<%= f.text_field :description, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :discussedTopic, "Omawiane zagadnienia" %> <br>
+			<%= f.text_field :discussedTopic, :class => "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :mainKnowledge, "Treść lekcji" %> <br>
+			<%= f.text_field :mainKnowledge, :class => "form-control" %>
+		</div>
+
+		<%= f.hidden_field :course_id, :value => params[:course_id] %>
+
+		<div class="actions">
+    		<%= f.submit "Zatwierdź", :class => "btn btn-primary" %>
+  		</div>
+
+	<% end %>
