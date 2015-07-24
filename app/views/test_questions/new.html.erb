@@ -1,0 +1,9 @@
+<% if current_user.isTeacher and @course.user_id == current_user.id%>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-5">	<%= render 'form' %></div>
+			<div class="col-md-6"></div>
+		</div>
+	</div>
+<% end %>

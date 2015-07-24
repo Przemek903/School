@@ -1,0 +1,36 @@
+<% if current_user.isTeacher and @course.user_id == current_user.id %>
+	<div class="container">
+		<%= link_to "Dodaj nowe pytanie", new_course_lesson_test_test_question_path(@course.id, @lesson.id, @lesson.test.id), class: "btn btn-primary" %>
+		<% count = 1 %>
+		<% @testQuestions.each do |testQuestion| %>
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-8">
+					<h3>Pytanie <%= count %>. <%= testQuestion.question %></h3> 
+					<div class="row">
+						<div class="col-md-3">
+							<h5>Odpowiedź A:  <%= testQuestion.answerA %></h5>
+						</div>
+						<div class="col-md-3">
+							<h5>Odpowiedź B:  <%= testQuestion.answerB %></h5>
+						</div>
+						<div class="col-md-3">
+							<h5>Odpowiedź C:  <%= testQuestion.answerC %></h5>
+						</div>
+						<div class="col-md-3">
+							<h5>Odpowiedź D:  <%= testQuestion.answerD %></h5>
+						</div>
+					</div>		
+			</div>
+			<div class="col-md-3">
+				<%= link_to "Edytuj pytanie", edit_course_lesson_test_test_question_path(@course.id, @lesson.id, @lesson.test.id, testQuestion.id), class: "btn btn-primary" %>
+				<%= link_to "Usuń pytanie", course_lesson_test_test_question_path(@course.id, @lesson.id, @lesson.test.id, testQuestion.id), :method => :delete , class: "btn btn-danger" %>
+			</div>
+		</div>
+		<% count += 1 %>
+		<% end %>
+	</div>
+<% end %>
+
+
+

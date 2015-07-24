@@ -11,7 +11,7 @@
 				<% if @lesson.test.nil?  %>
 					<%= link_to "Dodaj test do lekcji", course_lesson_create_test_path(:lesson_id => @lesson.id), :class => "btn btn-primary" %>
 				<% elsif %>
-					<%= link_to "Dodaj pytania do testu", '#', :class => "btn btn-primary" %>
+					<%= link_to "Dodaj pytania do testu", course_lesson_test_test_questions_path(@course.id, @lesson.id, @lesson.test.id), :class => "btn btn-primary" %>
 				<% end %>
 			<% end %>
 		</div>

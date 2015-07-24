@@ -45,4 +45,5 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:name, :description, :photo, :syllabus, :categories, 
                                      :recommendedBackground, :language, :timeOfStudy, :user_id)
     end
+    
 end
